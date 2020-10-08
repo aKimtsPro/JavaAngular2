@@ -1,4 +1,4 @@
-package exo;
+package exo.operation;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;

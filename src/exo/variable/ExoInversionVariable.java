@@ -1,4 +1,4 @@
-package exo;
+package exo.variable;
 
 public class ExoInversionVariable {
 //        Créez deux variables a et b capables de stocker des entiers.
