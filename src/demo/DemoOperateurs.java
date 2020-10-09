@@ -62,5 +62,28 @@ public class DemoOperateurs {
 
         System.out.println( ((((B == 5) || (E > 10 && A < 8)) || (A < B) || C) && C) );
         // false
+
+
+        // opérateurs d'affectation
+
+        int toAffect = 5;
+
+        toAffect = toAffect - 1;
+        toAffect -= 1;
+        toAffect += 5;
+        toAffect /= 4;
+        toAffect *= 3;
+
+        // increment/decrement
+
+        toAffect++; // toAffect = toAffect + 1;
+        ++toAffect;
+
+        toAffect--;
+        --toAffect;
+
+        // toAffect == 6
+
+        System.out.println("valeur de toAffect : " + ++toAffect);
     }
 }
