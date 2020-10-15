@@ -85,5 +85,6 @@ public class DemoOperateurs {
         // toAffect == 6
 
         System.out.println("valeur de toAffect : " + ++toAffect);
+
     }
 }

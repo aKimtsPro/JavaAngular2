@@ -9,8 +9,12 @@ public class Exo26 {
         // tri par sélection
 
         for (int i = 0; i < tab.length; i++) {
-            int indexOfMinOf= tab[i];
+            int indexOfMinOf= i;
             for (int j = i+1; j < tab.length ; j++) {
+                if(tab[j] < tab[i])
+                {
+
+                }
             }
         }
 
