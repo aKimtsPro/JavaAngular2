@@ -4,16 +4,8 @@ public class Appli {
 
     public static void main(String[] args) {
 
-        Personne luc = new Personne();
+        Personne luc = new Personne("luc", 50, ' ');
         Personne marie = new Personne();
-
-        luc.nom = "luc";
-        luc.age = 50;
-        luc.sexe = ' ';
-
-        marie.nom = "marie";
-        marie.age = 60;
-        marie.sexe = ' ';
 
         luc.sePresenter("salut", 5);
         System.out.println("-----------");

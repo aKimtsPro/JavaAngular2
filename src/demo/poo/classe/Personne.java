@@ -6,6 +6,23 @@ public class Personne {
     int age;
     char sexe;
 
+    Personne(){
+        this.nom = "inconnu";
+        this.sexe = ' ';
+        this.age = 0;
+    }
+
+    Personne(String nom, int age, char sexe){
+        this.nom = nom;
+        this.age = age;
+        this.sexe = sexe;
+    }
+
+    public Personne(String nom, int age) {
+        this.nom = nom;
+        this.age = age;
+    }
+
     void modifAge(int age){
         this.age = age;
     }
