@@ -4,14 +4,8 @@ public class Appli {
 
     public static void main(String[] args) {
 
-        Personne luc = new Personne("luc", 50, ' ');
+        Patron monPatron = new Patron();
 
-        luc.sePresenter("salut");
-        luc.setAge(-7845); // fonctionne pas
-
-
-
-        luc.sePresenter("salut");
 
     }
 }
