@@ -1,4 +1,4 @@
-package demo.poo.exo;
+package demo.poo.exo.vers1;
 
 public class Courant {
     String numeroCompte;

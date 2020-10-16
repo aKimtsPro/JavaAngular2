@@ -5,14 +5,13 @@ public class Appli {
     public static void main(String[] args) {
 
         Personne luc = new Personne("luc", 50, ' ');
-        Personne marie = new Personne();
 
-        luc.sePresenter("salut", 5);
-        System.out.println("-----------");
-        marie.sePresenter();
+        luc.sePresenter("salut");
+        luc.setAge(-7845); // fonctionne pas
 
-        Chien c = new Chien();
-        c.sePresenter();
+
+
+        luc.sePresenter("salut");
 
     }
 }

@@ -1,20 +1,20 @@
 package demo.poo.classe;
 
-public class Personne {
+class Personne {
 
-    String nom;
-    int age;
-    char sexe;
+    private String nom;
+    private int age;
+    private char sexe;
 
-    Personne(){
+    public Personne(){
         this.nom = "inconnu";
         this.sexe = ' ';
         this.age = 0;
     }
 
-    Personne(String nom, int age, char sexe){
+    public Personne(String nom, int age, char sexe){
         this.nom = nom;
-        this.age = age;
+        setAge(age);
         this.sexe = sexe;
     }
 
@@ -23,12 +23,33 @@ public class Personne {
         this.age = age;
     }
 
-    void modifAge(int age){
-        this.age = age;
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public char getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(char sexe) {
+        this.sexe = sexe;
+    }
+
+    public int getAge(){
+        return age;
+    }
+
+    public void setAge(int age){
+        if(age >= 0)
+            this.age = age;
     }
 
     // demo.poo.classe.Personne | sePresenter | /
-    void sePresenter(){
+    private void sePresenter(){
 
         System.out.println("Personne : "+
                 "\nnom : "+ nom +
