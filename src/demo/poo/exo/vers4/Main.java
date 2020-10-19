@@ -10,17 +10,15 @@ public class Main {
         luc.setDateNaissance(LocalDate.now().minusYears(18));
 
         Courant cc0 = new Courant("BE00000000000000", luc);
-        Courant cc1 = new Courant("BE00000000000001", luc);
+        Epargne ce = new Epargne("BE00000000000000", luc);
 
-        cc0.afficher(); // luc
-        cc1.afficher(); // luc
+        System.out.println( "--- epargne ---\n"+ ce + "\n--- courant ---");
+        System.out.println( cc0 );
 
-        luc.setNom("Lucas");
+        cc0.retrait(1000);
 
-        cc0.afficher(); // lucas
-        cc1.afficher(); // lucas
+        System.out.println( cc0 );
 
-        cc0.getTitulaire().setPrenom("luc");
 
     }
 
