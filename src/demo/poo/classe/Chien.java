@@ -17,4 +17,19 @@ public class Chien {
         System.out.println("woof");
     }
 
+    @Override
+    public String toString(){
+        return "Chien : " + "\n\tnom : " + getNom();
+    }
+
+    // Ctrl + O
+
+
+    @Override
+    public boolean equals(Object obj) {
+
+        return obj instanceof Chien &&
+                ((Chien) obj).getNom().equals(this.getNom());
+
+    }
 }

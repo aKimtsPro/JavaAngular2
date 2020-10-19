@@ -6,12 +6,6 @@ class Personne {
     private int age;
     private char sexe;
 
-    public Personne(){
-        this.nom = "inconnu";
-        this.sexe = ' ';
-        this.age = 0;
-    }
-
     public Personne(String nom, int age, char sexe){
         this.nom = nom;
         setAge(age);
@@ -49,7 +43,7 @@ class Personne {
     }
 
     // demo.poo.classe.Personne | sePresenter | /
-    private void sePresenter(){
+    protected void sePresenter(){
 
         System.out.println("Personne : "+
                 "\nnom : "+ nom +
@@ -57,19 +51,19 @@ class Personne {
     }
 
     // demo.poo.classe.Personne | sePresenter | (String)
-    void sePresenter(String message){
+    public void sePresenter(String message){
         sePresenter();
         System.out.println("\n" + message);
     }
 
     // Personne | sePresenter | (String, int)
-    int sePresenter(String message, int toReturn){
+    public int sePresenter(String message, int toReturn){
         sePresenter( message );
         return toReturn;
     }
 
     // Personne | sePresenter | int, String
-    void sePresenter(int nbrPres, String message){
+    public void sePresenter(int nbrPres, String message){
         for (int i = 0; i < nbrPres; i++) {
             sePresenter(message);
         }
