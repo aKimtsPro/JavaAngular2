@@ -21,4 +21,15 @@ public class Employe extends Personne{
     public void setSalaire(double salaire) {
         this.salaire = salaire;
     }
+
+    @Override
+    public void manger() {
+        System.out.println("la personne mange un burger");
+    }
+
+    @Override
+    public void manger(int nbrBurger) {
+        System.out.printf("la personne mange %d burger(s)\n", nbrBurger);
+
+    }
 }

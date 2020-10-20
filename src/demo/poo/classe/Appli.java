@@ -39,9 +39,8 @@ public class Appli {
 
         System.out.println( c.equals(c2) );
 
-        System.out.println(" --- sePresenter --- ");
 
-        Patron pat = new Patron();
-        pat.sePresenter();
+
+
     }
 }

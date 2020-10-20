@@ -1,7 +1,6 @@
 package demo.poo.collection;
 
 import demo.poo.classe.Chien;
-import demo.poo.exo.vers3.Personne;
 
 import java.util.ArrayList;
 

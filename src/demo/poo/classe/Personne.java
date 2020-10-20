@@ -1,6 +1,6 @@
 package demo.poo.classe;
 
-class Personne {
+abstract class Personne {
 
     private String nom;
     private int age;
@@ -41,6 +41,9 @@ class Personne {
         if(age >= 0)
             this.age = age;
     }
+
+    public abstract void manger();
+    public abstract void manger(int nbrBurger);
 
     // demo.poo.classe.Personne | sePresenter | /
     protected void sePresenter(){

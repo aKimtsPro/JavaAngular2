@@ -1,4 +1,4 @@
-package demo.poo.exo.vers1;
+package demo.poo.exo.banque.vers2;
 
 import java.time.LocalDate;
 
@@ -15,6 +15,8 @@ public class Main {
         cc.solde= 9856;
         cc.ligneCredit= 52;
         cc.titulaire=eric;
+
+        System.out.println( cc.titulaire.nom );
 
         cc.depot(98);
         cc.retrait(968);

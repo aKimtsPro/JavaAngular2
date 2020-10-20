@@ -1,7 +1,4 @@
-package demo.poo.exo.vers4;
-
-import java.time.LocalDate;
-import java.time.Period;
+package demo.poo.exo.banque.vers4;
 
 public class Courant extends Compte{
 

@@ -30,4 +30,14 @@ public class Patron extends Personne {
         super.sePresenter();
         System.out.println("entreprise : " + this.getNomEntreprise());
     }
+
+    @Override
+    public void manger() {
+        System.out.println("Le patron mange un hommard");
+    }
+
+    @Override
+    public void manger(int nbrHommard) {
+        System.out.printf("le patron mange %d hommard(s)\n", nbrHommard);
+    }
 }

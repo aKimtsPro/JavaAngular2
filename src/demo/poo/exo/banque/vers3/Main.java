@@ -1,4 +1,4 @@
-package demo.poo.exo.vers3;
+package demo.poo.exo.banque.vers3;
 
 import java.time.LocalDate;
 
