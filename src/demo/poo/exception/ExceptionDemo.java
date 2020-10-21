@@ -8,9 +8,9 @@ public class ExceptionDemo {
 
         p.setNom("johny");
 
+
         try{
             // code dangereux
-
             p.setAge(25);
         }
         catch ( NomInvalideException e ){

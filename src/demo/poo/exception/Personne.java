@@ -15,7 +15,7 @@ public class Personne {
         else
         {
             int trop = nom.length() - ( (nom.length() < 5) ? 5 : 20 );
-            throw new NomInvalideException( trop );
+            throw new NomInvalideException( trop ); // unchecked
         }
     }
 
@@ -27,7 +27,7 @@ public class Personne {
         if(age >= 20)
             this.age = age;
         else{
-            throw new AgeException( age );
+            throw new AgeException( age ); // checked
         }
     }
 }
