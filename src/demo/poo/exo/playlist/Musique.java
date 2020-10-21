@@ -1,9 +1,12 @@
 package demo.poo.exo.playlist;
 
+import demo.poo.enumeration.Genre;
+
 public abstract class Musique {
 
     private String nom;
     private String longueur;
+    private Genre genre;
 
 
     public Musique(String nom, String longueur) {
@@ -12,6 +15,14 @@ public abstract class Musique {
     }
 
     public abstract void jouer();
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
 
     public String getNom() {
         return nom;

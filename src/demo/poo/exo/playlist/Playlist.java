@@ -9,7 +9,18 @@ public class Playlist {
     private int indexToPlay; // = 0
 
     public void ajouter(Musique musique){
-        playlist.add(musique);
+
+        switch (musique.getGenre())
+        {
+            case ROCK:
+            case HIP_HOP:
+                playlist.add(musique);
+                break;
+            case CLASSIQUE:
+                System.out.println("musique classique interdite");
+                break;
+        }
+
     }
 
     public void supprimer(Musique musique){
