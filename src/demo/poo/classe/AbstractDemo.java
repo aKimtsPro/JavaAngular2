@@ -1,6 +1,8 @@
 package demo.poo.classe;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class AbstractDemo {
     public static void main(String[] args) {
@@ -20,5 +22,6 @@ public class AbstractDemo {
         for (Personne personne : list) {
             System.out.println( personne.getAge() );
         }
+
     }
 }
