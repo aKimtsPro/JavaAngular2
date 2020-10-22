@@ -6,18 +6,16 @@ public class ExceptionDemo {
 
         Personne p = new Personne();
 
-        p.setNom("johny");
-
-
         try{
             // code dangereux
+            p.setNom("jony");
             p.setAge(25);
-        }
-        catch ( NomInvalideException e ){
-            System.out.println( e.getMessage() );
         }
         catch ( AgeException e ) {
             System.out.println( e.getMessage() + e.getValeurInvalide() );
+        }
+        finally {
+            System.out.println("dans le finally");
         }
 
         System.out.println("fin algo");
