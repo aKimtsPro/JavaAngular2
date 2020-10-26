@@ -11,8 +11,8 @@ public class DemoInjection {
         SectionDAO dao = new SectionDAO();
 
         Section sect = new Section();
-        sect.setSection_id(0);
-        sect.setSection_name("injection sql' WHERE section_name LIKE 'c%'; DELETE FROM student; -- ");
+        sect.setSection_id(100);
+        sect.setSection_name("injection sql' WHERE section_name LIKE 'c%'; -- ");
         sect.setDelegate_id(0);
 
         boolean updated = false;

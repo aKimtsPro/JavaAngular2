@@ -101,17 +101,34 @@ public class SectionDAO extends DAO {
         if(toUpdate == null)
             throw new IllegalArgumentException("toUpdate shoud not be null");
 
-        try{
-            Connection co = DriverManager.getConnection(CO_STRING, USER, PSWD);
-            Statement stmt = co.createStatement();
-            String requete = "UPDATE section SET" +
-                    " section_name = '" + toUpdate.getSection_name() + "'"+
-                    ", delegate_id = " + toUpdate.getDelegate_id() +
-                    " WHERE section_id = " + toUpdate.getSection_id();
+        try( Connection co = DriverManager.getConnection(CO_STRING, USER, PSWD) ){
 
-            return stmt.executeUpdate(requete) == 1;
+            String toPrepare =
+                    "UPDATE section " +
+                    " SET section_name = ?, delegate_id = ? " +
+                    " WHERE section_id = ?";
+
+            PreparedStatement ps = co.prepareStatement( toPrepare );
+
+            ps.setString( 1, toUpdate.getSection_name() );
+            ps.setInt( 2, toUpdate.getDelegate_id() );
+            ps.setInt( 3, toUpdate.getSection_id() );
+
+            return ps.executeUpdate() == 1;
+
+
+
+//            Statement stmt = co.createStatement();
+//            String requete = "UPDATE section SET" +
+//                    " section_name = '" + toUpdate.getSection_name() + "'"+
+//                    ", delegate_id = " + toUpdate.getDelegate_id() +
+//                    " WHERE section_id = " + toUpdate.getSection_id();
+//
+//
+//            return stmt.executeUpdate(requete) == 1;
         }
         catch (SQLException e){
+            e.printStackTrace();
             throw new SectionErrorException();
         }
 
