@@ -32,9 +32,88 @@ public class SectionDAO extends DAO {
         catch (SQLException e){
             list = null;
         }
-
         return list;
+    }
+
+    public Section getById(int id){
+
+        Section s = null;
+
+        try(Connection co = DriverManager.getConnection(CO_STRING, USER, PSWD)){
+
+            Statement stmt = co.createStatement();
+            String requete = "SELECT * FROM section WHERE section_id = " + id;
+            ResultSet rs = stmt.executeQuery(requete);
+
+            if( rs.next() ){
+                s = new Section();
+
+                s.setSection_id( rs.getInt("section_id") );
+                s.setSection_name( rs.getString("section_name") );
+                s.setDelegate_id( rs.getInt("delegate_id") );
+            }
+        }
+        catch( SQLException e ){
+            s = null;
+        }
+        return s;
+    }
+
+    public boolean delete(int id){
+
+        try( Connection co = DriverManager.getConnection(CO_STRING, USER, PSWD)){
+
+            Statement stmt = co.createStatement();
+            String requete = "DELETE FROM section WHERE section_id = " + id;
+
+            return stmt.executeUpdate(requete) == 1;
+        }
+        catch (SQLException e){
+            return false;
+        }
 
     }
 
+    public boolean insert(Section toInsert){
+
+        if( toInsert == null ){
+            throw new IllegalArgumentException("toInsert should not be null");
+        }
+
+        try( Connection co = DriverManager.getConnection(CO_STRING, USER, PSWD) ){
+
+            Statement stmt = co.createStatement();
+            String requete = "INSERT INTO section VALUES " +
+                    "( " + toInsert.getSection_id() +
+                    ", '" + toInsert.getSection_name() + "'" +
+                    ", " + toInsert.getDelegate_id() +" )";
+
+            return stmt.executeUpdate(requete) == 1;
+        }
+        catch (SQLException e){
+            return false;
+        }
+
+    }
+
+    public boolean update(Section toUpdate) throws SectionErrorException{
+
+        if(toUpdate == null)
+            throw new IllegalArgumentException("toUpdate shoud not be null");
+
+        try{
+            Connection co = DriverManager.getConnection(CO_STRING, USER, PSWD);
+            Statement stmt = co.createStatement();
+            String requete = "UPDATE section SET" +
+                    " section_name = '" + toUpdate.getSection_name() + "'"+
+                    ", delegate_id = " + toUpdate.getDelegate_id() +
+                    " WHERE section_id = " + toUpdate.getSection_id();
+
+            return stmt.executeUpdate(requete) == 1;
+        }
+        catch (SQLException e){
+            throw new SectionErrorException();
+        }
+
+    }
 }
