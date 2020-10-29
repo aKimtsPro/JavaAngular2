@@ -112,7 +112,7 @@ public class CourseDAO extends DAO<Course, String>{
         if( toUpdate == null )
             throw new IllegalArgumentException("toUpdate should not be null");
 
-        try(Connection co = DriverManager.getConnection(CO_STRING, USER, PSWD)){
+        try(Connection co = this.openConnection()){
 
             String requete = "UPDATE course" +
                     " SET course_name = ?, course_ects = ?, professor_id = ?" +

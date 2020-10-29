@@ -5,12 +5,12 @@ import demo.jdbc.dao.StudentDAO;
 import demo.jdbc.entity.Section;
 import demo.jdbc.entity.Student;
 
-import java.sql.SQLException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class DemoDao {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
 
         // StudentDAO
         Student std = null;

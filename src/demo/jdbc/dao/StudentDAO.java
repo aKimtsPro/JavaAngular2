@@ -3,7 +3,9 @@ package demo.jdbc.dao;
 import demo.jdbc.entity.Student;
 
 import java.sql.*;
+import java.util.List;
 
+@demo.jdbc.annotations.DAO()
 public class StudentDAO extends DAO implements AutoCloseable{
 
     private final Connection co;
@@ -12,7 +14,7 @@ public class StudentDAO extends DAO implements AutoCloseable{
         co = DriverManager.getConnection(CO_STRING,USER,PSWD);
     }
 
-    public Student getById(int id){
+    public Student getById(Integer id){
 
         Student stud = null;
         try{
@@ -42,8 +44,35 @@ public class StudentDAO extends DAO implements AutoCloseable{
 
     }
 
+    //region undefined
     @Override
     public void close() throws Exception {
         co.close();
     }
+
+    @Override
+    public boolean insert(Object toInsert) {
+        return false;
+    }
+
+    @Override
+    public Object getById(Object o) {
+        return null;
+    }
+
+    @Override
+    public List getAll() {
+        return null;
+    }
+
+    @Override
+    public boolean update(Object toUpdate) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(Object o) {
+        return false;
+    }
+    //endregion
 }

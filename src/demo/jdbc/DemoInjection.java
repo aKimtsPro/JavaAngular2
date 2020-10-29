@@ -16,11 +16,7 @@ public class DemoInjection {
         sect.setDelegate_id(0);
 
         boolean updated = false;
-        try {
-            updated = dao.update(sect);
-        } catch (SectionErrorException e) {
-            e.printStackTrace();
-        }
+        updated = dao.update(sect);
 
         System.out.println("updated? : " + updated);
 

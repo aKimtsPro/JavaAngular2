@@ -16,12 +16,7 @@ public class Exo2 {
         sect.setDelegate_id(55);
 
         boolean updated = false;
-        try{
             updated = dao.update(sect);
-        }
-        catch (SectionErrorException e){
-            e.printStackTrace();
-        }
 
         System.out.println("'Ladders!' changed to 'cours' : " + updated );
 
