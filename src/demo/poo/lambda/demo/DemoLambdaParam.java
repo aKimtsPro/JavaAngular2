@@ -2,7 +2,10 @@ package demo.poo.lambda.demo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class DemoLambdaParam {
 
@@ -31,16 +34,21 @@ public class DemoLambdaParam {
 
         System.out.println("foreach structure iterative");
         for (Personne p : list) {
-            System.out.println(p);
+            p.sePresenter();
         }
 
         System.out.println("foreach méthode");
         list.forEach((Personne p) -> {
-            System.out.println(p);
+            p.sePresenter();
         });
 
+
         System.out.println("foreach methode ::");
-        list.forEach(System.out::println);
+        list.forEach(Personne::sePresenter);
+        // Pour ce consumer on demande une méthode prenant une personne en param et pas de retour
+        // Cette lambda fonctionne malgré le manque d'une personne en param
+        // car la personne sur laquelle appliquer 'sePresenter()' est inconnue.
+        // La dite personne sera donc notre paramètre.
 
     }
 
