@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SectionDAO extends DAO {
+public class SectionDAO extends DAO<Section, Integer> {
 
     public List<Section> getAll(){
 
@@ -35,7 +35,7 @@ public class SectionDAO extends DAO {
         return list;
     }
 
-    public Section getById(int id){
+    public Section getById(Integer id){
 
         Section s = null;
 
@@ -59,7 +59,7 @@ public class SectionDAO extends DAO {
         return s;
     }
 
-    public boolean delete(int id){
+    public boolean delete(Integer id){
 
         try( Connection co = DriverManager.getConnection(CO_STRING, USER, PSWD)){
 
@@ -96,7 +96,7 @@ public class SectionDAO extends DAO {
 
     }
 
-    public boolean update(Section toUpdate) throws SectionErrorException{
+    public boolean update(Section toUpdate) {
 
         if(toUpdate == null)
             throw new IllegalArgumentException("toUpdate shoud not be null");
@@ -129,7 +129,8 @@ public class SectionDAO extends DAO {
         }
         catch (SQLException e){
             e.printStackTrace();
-            throw new SectionErrorException();
+            return false;
+            //throw new SectionErrorException();
         }
 
     }

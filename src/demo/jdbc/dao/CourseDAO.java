@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseDAO extends DAO {
+public class CourseDAO extends DAO<Course, String>{
 
     public Course getById(String id){
 
