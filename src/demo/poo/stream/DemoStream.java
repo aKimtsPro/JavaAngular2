@@ -88,7 +88,7 @@ public class DemoStream {
         System.out.println("----- sorted -----");
         list.stream()
                 .sorted(Personne::compareTo)   // la personne etant comparable, le comparator est
-                .forEach(System.out::println); // facultative
+                .forEach(System.out::println); // facultatif
 
         // peek
         // equivalent de foreach en action intermédiaire
