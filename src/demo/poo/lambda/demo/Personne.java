@@ -5,6 +5,9 @@ public class Personne {
     private String nom;
     private int age;
 
+    public Personne() {
+    }
+
     public Personne(String nom, int age) {
         this.nom = nom;
         this.age = age;
@@ -30,11 +33,15 @@ public class Personne {
         this.age = age;
     }
 
+    public boolean isOld(){
+        return this.getAge() >= 18;
+    }
+
     @Override
     public String toString() {
         return "Personne{" +
-                "nom='" + nom + '\'' +
-                ", age=" + age +
+                "\nnom='" + nom + '\'' +
+                ", \nage=" + age +
                 '}';
     }
 }
