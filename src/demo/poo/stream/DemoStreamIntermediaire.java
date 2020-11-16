@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class DemoStream {
+public class DemoStreamIntermediaire {
 
     public static void main(String[] args) {
 
@@ -32,8 +33,9 @@ public class DemoStream {
         list.stream() // Stream<Personne>
                 .filter(Personne::isOld) // Stream<Personne>
                 .map(Personne::getNom) // Stream<String>
+                //.map(String::length) // Stream<Integer> != IntStream
+                //.mapToInt(String::length) // IntStream
                 .forEach(System.out::println);
-
 
         System.out.println("*--- Les méthodes intermédiaires ---*");
 
