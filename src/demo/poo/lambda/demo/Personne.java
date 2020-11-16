@@ -1,6 +1,6 @@
 package demo.poo.lambda.demo;
 
-public class Personne {
+public class Personne implements Comparable<Personne>{
 
     private String nom;
     private int age;
@@ -39,9 +39,13 @@ public class Personne {
 
     @Override
     public String toString() {
-        return "Personne{" +
-                "\nnom='" + nom + '\'' +
-                ", \nage=" + age +
-                '}';
+        return "Personne :" +
+                "\n\t- nom :" + nom +
+                "\n\t- age :" + age;
+    }
+
+    @Override
+    public int compareTo(Personne personne) {
+        return this.getAge() - personne.getAge();
     }
 }
