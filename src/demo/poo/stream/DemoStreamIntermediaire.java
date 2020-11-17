@@ -83,7 +83,7 @@ public class DemoStreamIntermediaire {
 
         // sorted
         // range les elements à l'aide d'un comparator
-        // Comparator : reférence à une méthode prenant 2 param de mm type et renvoyant un int
+        // Comparator<T> : reférence à une méthode prenant 2 param de mm type et renvoyant un int
         //              si le int est négatif, le premier param sera premier,
         //              sinon, le second sera premier
 
