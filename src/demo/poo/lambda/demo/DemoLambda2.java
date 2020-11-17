@@ -18,6 +18,16 @@ public class DemoLambda2 {
 
         // Les interfaces fonctionnelles permettent de catégoriser les lambdas
 
+        //---------------------------------------------------------//
+        System.out.println("-----------------------------------");
+        // RUNNABLE
+
+        // pas de param
+        // pas de retour
+
+        Runnable run = () -> System.out.println("salut, je suis un runnable!");
+        run.run();
+
 
         //---------------------------------------------------------//
         System.out.println("-----------------------------------");
